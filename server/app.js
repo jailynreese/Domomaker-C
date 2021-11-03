@@ -38,7 +38,7 @@ let redisClient = redis.createClient({
   host: redisURL.hostname,
   port: redisURL.port,
   password: redisPASS,
-})
+});
 
 // pull in our routes
 const router = require('./router.js');

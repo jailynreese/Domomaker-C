@@ -31,7 +31,7 @@ let redisURL = {
 let redisPASS = 'ODXETKf3K8uYbilgdGkbX8V19mUv2oyx';
 if(process.env.REDISCLOUD_URL){
   redisURL = url.parse(process.env.REDISCLOUD_URL);
-  [,redisPass] = redisURL.auth.split(':');
+  [,redisPASS] = redisURL.auth.split(':');
 }
 
 let redisClient = redis.createClient({
@@ -41,7 +41,7 @@ let redisClient = redis.createClient({
 });
 
 // pull in our routes
-const router = require('./router.js');
+const router = require('./router');
 
 const app = express();
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted/`)));

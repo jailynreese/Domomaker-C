@@ -65,7 +65,7 @@ app.use(session({
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
-app.disable('x=powered-by');
+app.disable('x-powered-by');
 app.use(cookieParser());
 
 //csrf must come AFTER app.use(cookieParser());
